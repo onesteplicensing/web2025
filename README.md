@@ -121,3 +121,34 @@ http://127.0.0.1:4000/
 ```
 
 Jekyll will watch for changes in HTML, Markdown, SCSS, and other files, and reload the browser automatically.
+
+---
+
+## 🐳 Run Jekyll Locally Using Docker
+
+If you prefer not to install Ruby and Bundler directly, you can use Docker to run the Jekyll server in a container.
+
+### ✅ Prerequisites
+
+- [Docker](https://www.docker.com/get-started) installed on your system
+
+### 📦 Using Docker Compose
+
+A `docker-compose.yml` file is provided in the project. To start the Jekyll server:
+
+1. Open a terminal and navigate to the project directory.
+2. Start the Jekyll server using Docker Compose:
+
+   ```bash
+   docker-compose up
+   ```
+
+   Or run in detached mode:
+
+   ```bash
+   docker-compose up -d
+   ```
+
+3. Visit your local site at `http://localhost:4000`
+
+The container will automatically watch for changes and rebuild the site as needed. All your files are mounted into the container, so edits on your host machine will be reflected in the running site.

@@ -6,7 +6,7 @@ carousel:
       — your partner<br>for increasing brand awareness, revenue,<br>
       and driving customer loyalty.
     images:
-      - /assets/images/slider/slide-1/img-1.png
+      - https://i.ibb.co/9H2NN2Cb/slide1-img1.jpg
       - /assets/images/slider/slide-1/img-2.jpg
       - /assets/images/slider/slide-1/img-3.png
 
@@ -17,7 +17,7 @@ carousel:
       and driving customer loyalty.
     images:
       - /assets/images/slider/slide-2/img-1.png
-      - /assets/images/slider/slide-2/img-2.png
+      - https://i.ibb.co/KpRqFN4g/slide2-img2.jpg
       - /assets/images/slider/slide-2/img-3.png
 
   - id: slide-3

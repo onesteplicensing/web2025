@@ -6,6 +6,12 @@
       text: "Established"
       extra_src: /assets/images/timeline/2019-2.svg
 
+- year: 2020
+  id: v-2022
+  content:
+    - src: /assets/images/timeline/2021-1.svg
+      text: "OSL start collaboration with BRP, Can-Am, Skidoo & Seadoo"
+
 - year: 2021
   id: v-2021
   content:
@@ -23,20 +29,22 @@
   id: v-2022
   content:
     - src: /assets/images/timeline/2021-1.svg
-      text: "BRP x Diecast Models"
+      text: "BRP launched their brand new<br> Maverick X3 SxS Ride On Toy"
 
 - year: 2023
   id: v-2023
   content:
     - text: |
-        BRP launched their brand new<br>Maverick R SxS
+        BRP launched their brand new<br>Renegade Ride On Toy
       src: /assets/images/timeline/2023.png
 
 - year: 2024
   id: v-2024
   content:
     - text: |
-        OSL start collaborating with<br>Porsche
+        OSL start collaborating with<br>Porsche<br><br>
+        BRP launched their Collectable Diecast<br><br>
+        BRP launched their brand new<br>Outlander Ride On Toy
       src: /assets/images/timeline/2024.png
 
 - year: 2025
@@ -44,5 +52,7 @@
   content:
     image: /assets/images/timeline/2025-1.png
     text: |
-      <br><br>BRP x Roblox<br><br>Became Nilu27's official brand<br>licensing agent
+      <br><br>OSL X Porsche 911 992.1 Ride-On Toy<br><br>
+      Became Nilu27's official brand licensing agent<br><br>
+      Became Koenigsegg's official brand licensing agent
     extraImage: /assets/images/timeline/2025-2.png

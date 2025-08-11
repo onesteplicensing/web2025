@@ -1,6 +1,5 @@
 const cards = document.querySelectorAll(".toy-card");
 const isMobile = window.innerWidth < 500;
-
 cards.forEach(card => {
   const mainImg = card.querySelector(".main-img");
   const thumbs = card.querySelectorAll(".thumbs-wrapper button img");

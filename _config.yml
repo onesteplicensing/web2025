@@ -36,6 +36,7 @@ share-image: "" # used for SEO, see _includes/_head.html
 # Optional features
 animated: true
 
+<<<<<<< HEAD
 menu:
   - title: "About"
     url: "/#about"
@@ -68,3 +69,60 @@ collections:
   toys:
     output: true
     permalink: /toys/:name/
+=======
+text:
+  pagination:
+    newer: "Newer"
+    older: "Older"
+  share_buttons:
+    text: "Share this post!"
+    facebook: "Share on Facebook"
+    twitter: "Share on Twitter"
+    googleplus: "Share on Google+"
+    linkedin: "Share on LinkedIn"
+    digg: "Share on Digg"
+    tumblr: "Share on Tumblr"
+    reddit: "Share on Reddit"
+    stumbleupon: "Share on StumbleUpon"
+    hackernews: "Share on Hacker News"
+  post:
+    updated: "Updated"
+    minute_read: "minute read"
+    related_posts: "Related Posts"
+  index:
+    coming_soon: "Coming soon..."
+  contact:
+    email: "Email Address"
+    content: "What would you like to say?"
+    subject: "New submission!"
+    submit: "Say Hello"
+    ajax:
+      sending: "sending.."
+      sent: "Message sent!"
+      error: "Error!"
+  thanks: "Thanks for contacting us. We will reply as soon as possible."
+  og_locale: "en_US"
+# Build settings
+# plugins:
+#  - jekyll-feed
+
+# Exclude from processing.
+# The following items will not be processed, by default.
+# Any item listed under the `exclude:` key here will be automatically added to
+# the internal "default list".
+#
+# Excluded items can be processed by explicitly listing the directories or
+# their entries' file path in the `include:` list.
+#
+# exclude:
+#   - .sass-cache/
+#   - .jekyll-cache/
+#   - gemfiles/
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules/
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/
+>>>>>>> gh-pages

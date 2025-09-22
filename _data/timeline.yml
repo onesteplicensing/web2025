@@ -1,5 +1,5 @@
 - year: 2019
-  id: v-2019
+  template: timeline-template-1
   active: true
   content:
     - src: /assets/images/timeline/2019-1.svg
@@ -7,13 +7,14 @@
       extra_src: /assets/images/timeline/2019-2.svg
 
 - year: 2020
-  id: v-2022
+  template: timeline-template-6
   content:
-    - src: /assets/images/timeline/2021-1.svg
-      text: "OSL start collaboration with BRP, Can-Am, Skidoo & Seadoo"
+      image: /assets/images/timeline/2021-1.svg
+      text: |
+          <br><br><br><br><br>OSL start collaboration with BRP, Can-Am, Skidoo & Seadoo
 
 - year: 2021
-  id: v-2021
+  template: timeline-template-2
   content:
     - images:
         - /assets/images/timeline/2021-1.svg
@@ -26,20 +27,20 @@
         - /assets/images/timeline/2021-4.svg
 
 - year: 2022
-  id: v-2022
+  template: timeline-template-3
   content:
     - src: /assets/images/timeline/2021-1.svg
       text: "BRP launched their brand new<br> Maverick X3 SxS Ride On Toy"
 
 - year: 2023
-  id: v-2023
+  template: timeline-template-4
   content:
     - text: |
         BRP launched their brand new<br>Renegade Ride On Toy
       src: /assets/images/timeline/2023.png
 
 - year: 2024
-  id: v-2024
+  template: timeline-template-5
   content:
     - text: |
         OSL start collaborating with<br>Porsche<br><br>
@@ -48,7 +49,7 @@
       src: /assets/images/timeline/2024.png
 
 - year: 2025
-  id: v-2025
+  template: timeline-template-6
   content:
     image: /assets/images/timeline/2025-1.png
     text: |
@@ -56,3 +57,17 @@
       Became Nilu27's official brand licensing agent<br><br>
       Became Koenigsegg's official brand licensing agent
     extraImage: /assets/images/timeline/2025-2.png
+
+- year: 2026
+  template: timeline-template-1
+  content:
+    - src: /assets/images/timeline/2019-1.svg
+      text: "Established"
+      extra_src: /assets/images/timeline/2019-2.svg
+
+- year: 2027
+  template: timeline-template-4
+  content:
+    - text: |
+        BRP launched their brand new<br>Renegade Ride On Toy
+      src: /assets/images/timeline/2023.png

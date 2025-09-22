@@ -18,9 +18,9 @@
             <!-- Timeline content -->
             <div class="tab-content col-md-9 position-relative">
                 {% for item in site.data.timeline %}
-                <div class="tab-pane fade {% if item.active %}show active{% endif %}" id="{{ item.id }}">
+                <div class="tab-pane fade {% if item.active %}show active{% endif %} {{item.template}}" id="v-{{item.year}}">
                     <div class="content">
-                        {% if item.id == "v-2019" %}
+                        {% if item.template == "timeline-template-1" %}
                         {% assign block = item.content[0] %}
                         <div class="img-container">
                             <img src="{{ block.src }}" alt="">
@@ -31,7 +31,7 @@
                         </div>
 
 
-                        {% elsif item.id == "v-2021" %}
+                        {% elsif item.template == "timeline-template-2" %}
                         {% for block in item.content %}
                         {% if block.images %}
                         <ul>
@@ -60,21 +60,21 @@
                         {% endif %}
                         {% endfor %}
 
-                        {% elsif item.id == "v-2022" %}
+                        {% elsif item.template == "timeline-template-3" %}
                         {% assign block = item.content[0] %}
                         <div class="img-container">
                             <img width="120" src="{{ block.src }}" alt="">
                         </div>
                         {{ block.text | markdownify }}
 
-                        {% elsif item.id == "v-2023" %}
+                        {% elsif item.template == "timeline-template-4" %}
                         {% assign block = item.content[0] %}
                         <div class="img-container">
                             <img width="245" src="{{ block.src }}" alt="">
                         </div>
                         {{ block.text | markdownify }}
 
-                        {% elsif item.id == "v-2024" %}
+                        {% elsif item.template == "timeline-template-5" %}
                         {% assign block = item.content[0] %}
                         {{ block.text | markdownify }}
                         <div class="img-container">
@@ -85,9 +85,12 @@
                             <img width="210" src="{{ item.content.image }}" alt="">
                         </div>
                         {{ item.content.text | markdownify }}
+
+                        {% if item.content.extraImage %}
                         <div class="img-container rounded-3">
                             <img width="160" src="{{ item.content.extraImage }}" alt="">
                         </div>
+                        {% endif %}
                         {% endif %}
                     </div>
                 </div>

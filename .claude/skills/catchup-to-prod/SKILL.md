@@ -76,10 +76,19 @@ Summarize the incoming prod commits and the file list from `analyze`:
 
 Ask the user to confirm before changing anything.
 
-### 4. Backup, then merge without committing
+### 4. Backup, then merge
 ```bash
 BACKUP=backup/gh-pages-$(date +%Y-%m-%d-%H%M)
 git branch "$BACKUP"                       # local only, never pushed
+```
+**If `analyze` printed `FAST-FORWARD`**, run `git merge --ff-only prod/gh-pages`
+and skip to step 8. Staging then matches prod exactly and there is nothing to
+commit. This is the normal case right after the user merges a staging → prod PR
+with a merge commit. Don't make a `--no-ff` merge here: that would put an empty
+merge commit on staging, which the next PR carries to prod, and so on forever.
+
+Otherwise merge without committing:
+```bash
 git merge --no-ff --no-commit prod/gh-pages
 ```
 Then restore staging's CNAME state:

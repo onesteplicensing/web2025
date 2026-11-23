@@ -132,6 +132,10 @@ cmd_analyze() {
   fi
   echo "Incoming prod commits:"
   git log --format='  %h %ad %s' --date=short "HEAD..$PROD_REF"
+  if git merge-base --is-ancestor HEAD "$PROD_REF" && git diff --quiet HEAD "$PROD_REF" -- CNAME; then
+    echo "FAST-FORWARD: staging has nothing prod lacks. 'git merge --ff-only $PROD_REF' makes"
+    echo "  staging identical to prod with no new merge commit (preferred over a merge)."
+  fi
 
   local base in_h in_p sc pc d line status label
   base=$(git merge-base HEAD "$PROD_REF")

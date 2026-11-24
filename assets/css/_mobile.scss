@@ -134,10 +134,11 @@
             }
         }
 
+        // Keyed by template (like _timeline.scss), not by year, so a new
+        // year picks up the mobile layout of whichever template it uses.
         .tab-content {
 
-
-            #v-2019 .content {
+            .timeline-template-1 .content {
                 margin-top: 0;
                 padding: 50px 0 0 0;
 
@@ -150,7 +151,7 @@
                 }
             }
 
-            #v-2021 {
+            .timeline-template-2 {
                 .content {
                     ul {
                         zoom: .3;
@@ -165,9 +166,9 @@
                 }
             }
 
-            #v-2022 .content,
-            #v-2023 .content,
-            #v-2024 .content {
+            .timeline-template-3 .content,
+            .timeline-template-4 .content,
+            .timeline-template-5 .content {
                 padding: 30px 0 0 0;
                 gap: 30px;
 
@@ -180,7 +181,7 @@
                 }
             }
 
-            #v-2025 .content {
+            .timeline-template-6 .content {
                 padding: 0;
                 gap: 30px;
 

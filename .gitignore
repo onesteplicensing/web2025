@@ -4,5 +4,8 @@ _site
 .jekyll-metadata
 vendor
 
+# secrets
+.env
+
 # macOS
 .DS_Store

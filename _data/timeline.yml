@@ -18,7 +18,8 @@
   template: timeline-two-images-a
   content:
     text: |
-      OSL start collaboration with BRP, Can-Am, Skidoo & Seadoo
+      OSL start collaboration with BRP, <br>
+      Can-Am, Skidoo & Seadoo
     images:
       - https://i.ibb.co/fztgzRp5/timeline2020-brp1.jpg
       - https://i.ibb.co/4Rxt4mBG/timeline2020-brp2.jpg
@@ -46,7 +47,7 @@
 - year: 2022
   template: timeline-three-images-a
   content:
-    text: "BRP launched their brand new<br> Maverick X3 SxS Ride On Toy"
+    text: "BRP launched their brand new Maverick X3 SxS Ride On Toy"
     images:
       - /assets/images/timeline/2023.png # Maverick X3, small card on the left
       - https://i.ibb.co/5W9Rn9ft/timeline2022-canam2.jpg # top right

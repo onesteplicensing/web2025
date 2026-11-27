@@ -66,3 +66,7 @@ Most content edits are YAML edits in `_data/`, not HTML.
 - **JS:** plain scripts in `assets/js/` (Bootstrap bundle plus small per-feature files). Pages that need them load them directly, e.g. `toysGallery.js` on toy pages.
 - **Images:** many are hosted on imgbb (`i.ibb.co`); the rest live in `assets/images/`. Source media is on the Google Drive linked in the README.
 - **Stray files at the repo root get published:** files without front matter, such as `README.md`, `LICENSE.md`, `docker-compose.yml` and `run-script.txt`, are copied to the site as static files. Add anything that mustn't be public to `exclude:` in `_config.yml`.
+
+## Guidelines
+- make no assumptions, ask the user as many clarifying questions in multi-turn style as much as needed
+- when provided with new asset (images) in github issue, let's use the github hosted image URL

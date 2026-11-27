@@ -2,6 +2,14 @@
     .inner {
         width: 50%;
 
+        // Room between the text and the photos (issue #2), only while they sit
+        // side by side: below 1000px they stack (see _mobile.scss).
+        &:not(.slider) {
+            @media (min-width: 1000px) {
+                padding-right: 40px;
+            }
+        }
+
         &.slider {
             position: relative;
             height: 510px;

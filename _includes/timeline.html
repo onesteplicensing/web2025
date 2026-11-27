@@ -22,7 +22,7 @@
             <div class="tab-content col-md-9 position-relative">
                 {% for item in site.data.timeline %}
                 {% comment %}
-                Two-/three-image templates: how many images each one uses, and how
+                Two-/three-/four-image templates: how many images each one uses, and how
                 many layouts a "-b" variant picks from at random on each page load
                 (the pick happens in assets/js/app.js).
                 {% endcomment %}
@@ -33,6 +33,8 @@
                 {% when "timeline-two-images-b" %}{% assign image_count = 2 %}{% assign layout_count = 3 %}
                 {% when "timeline-three-images-a" %}{% assign image_count = 3 %}
                 {% when "timeline-three-images-b" %}{% assign image_count = 3 %}{% assign layout_count = 3 %}
+                {% when "timeline-four-images-a" %}{% assign image_count = 4 %}
+                {% when "timeline-four-images-b" %}{% assign image_count = 4 %}{% assign layout_count = 3 %}
                 {% endcase %}
                 <div class="tab-pane fade {% if item.active %}show active{% endif %} {{item.template}}"
                     id="v-{{item.year}}" {% if layout_count > 0 %}data-layouts="{{ layout_count }}"{% endif %}>
@@ -99,14 +101,16 @@
 
                         {% elsif image_count > 0 %}
                         {% comment %}
-                        timeline-two-images-a/-b and timeline-three-images-a/-b:
+                        timeline-two-images-a/-b, timeline-three-images-a/-b and
+                        timeline-four-images-a/-b:
                           content:
                             text: |
                               ...
-                            images:     # ordered; the template uses the first two or three
+                            images:     # ordered; the template uses the first two, three or four
                               - ...     # .img-1
                               - ...     # .img-2
-                              - ...     # .img-3 (three-image templates only)
+                              - ...     # .img-3 (three- and four-image templates)
+                              - ...     # .img-4 (four-image templates)
                         Extra images are ignored and missing ones are skipped.
                         {% endcomment %}
                         <div class="timeline-text">{{ item.content.text | markdownify }}</div>

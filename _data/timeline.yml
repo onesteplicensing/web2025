@@ -55,22 +55,26 @@
       src: /assets/images/can-am/renegade/DK-CA002-WH.jpg
 
 - year: 2024
-  template: timeline-template-5
+  template: timeline-four-images-a
   content:
-    - text: |
-        BRP launched their Collectable Diecast<br><br>
-        BRP launched their brand new<br>Outlander Ride On Toy
-      src: https://i.ibb.co/SLhgnvz/dcm-logo-grey.png
+    text: |
+      BRP launched their Collectable Diecast<br><br>
+      BRP launched their brand new<br>Outlander Ride On Toy
+    images:
+      - https://i.ibb.co/gbZWjXzJ/timeline2024-canam1.jpg # top: Defender
+      - https://i.ibb.co/SLhgnvz/dcm-logo-grey.png # right, biggest: Diecast Masters
+      - https://i.ibb.co/Mk8084qY/timeline2024-canam2.jpg # bottom left: snowmobile
+      - https://i.ibb.co/WW9W9567/timeline2024-canam3.jpg # bottom right: Outlander
 
 - year: 2025
-  template: timeline-template-6
+  template: timeline-two-images-a
   content:
-    image: /assets/images/timeline/2025-2.png #https://i.ibb.co/5hcZgdWV/porsche-logo.png
     text: |
-      <br><br><br>
       Became Nilu27's official brand licensing agent<br><br>
       Became Koenigsegg's official brand licensing agent
-    extraImage: /assets/images/showcase/koenigsegg.png
+    images:
+      - /assets/images/timeline/2025-2.png #https://i.ibb.co/5hcZgdWV/porsche-logo.png
+      - /assets/images/showcase/koenigsegg.png
 
 - year: 2026
   template: timeline-two-images-b

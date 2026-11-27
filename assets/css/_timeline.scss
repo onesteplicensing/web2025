@@ -262,8 +262,8 @@
             }
         }
 
-        // Two-/three-image templates (see _includes/timeline.html).
-        // The text and each image card (.img-1/2/3, in `images:` order) get their
+        // Two-/three-/four-image templates (see _includes/timeline.html).
+        // The text and each image card (.img-1/2/3/4, in `images:` order) get their
         // own grid area, so nothing overlaps whatever the text length. The gaps
         // leave room for each card's tilt: its --tilt plus the --jitter (up to
         // ±4deg) that app.js adds on "-b" templates. A "-b" template also gets a
@@ -272,7 +272,9 @@
         .timeline-two-images-a,
         .timeline-two-images-b,
         .timeline-three-images-a,
-        .timeline-three-images-b {
+        .timeline-three-images-b,
+        .timeline-four-images-a,
+        .timeline-four-images-b {
             .content {
                 display: grid;
                 align-content: start;
@@ -300,6 +302,10 @@
 
             .img-3 {
                 grid-area: img3;
+            }
+
+            .img-4 {
+                grid-area: img4;
             }
 
             .img-container {
@@ -480,6 +486,105 @@
             }
         }
 
+        // Layout 1: card above the text, biggest card on the right, two cards
+        // along the bottom. (Four-image spacing is set after the tiers below.)
+        .timeline-four-images-a,
+        .timeline-four-images-b {
+            .content {
+                grid-template-columns: 1fr auto;
+                grid-template-areas:
+                    "img1 img2"
+                    "text img2"
+                    "img3 img4";
+            }
+
+            .img-1 img,
+            .img-3 img,
+            .img-4 img {
+                width: 160px;
+            }
+
+            .img-2 img {
+                width: 200px;
+            }
+
+            .img-1 {
+                --tilt: -4deg;
+            }
+
+            .img-2 {
+                --tilt: -10deg;
+                align-self: center;
+            }
+
+            .img-3 {
+                --tilt: 7deg;
+            }
+
+            .img-4 {
+                --tilt: -3deg;
+                justify-self: center;
+            }
+        }
+
+        // Layout 2: biggest card on the left, card above the text on the right,
+        // two cards along the bottom.
+        .timeline-four-images-b.layout-2 {
+            .content {
+                grid-template-columns: auto 1fr;
+                grid-template-areas:
+                    "img2 img1"
+                    "img2 text"
+                    "img3 img4";
+            }
+
+            .img-1 {
+                --tilt: 4deg;
+            }
+
+            .img-2 {
+                --tilt: 8deg;
+            }
+
+            .img-3 {
+                --tilt: -6deg;
+                justify-self: center;
+            }
+
+            .img-4 {
+                --tilt: 5deg;
+                justify-self: start;
+            }
+        }
+
+        // Layout 3: card beside the text, the other three in a row under them.
+        .timeline-four-images-b.layout-3 {
+            .content {
+                grid-template-columns: auto auto 1fr;
+                grid-template-areas:
+                    "img1 text text"
+                    "img3 img2 img4";
+            }
+
+            .img-1 {
+                --tilt: -8deg;
+            }
+
+            .img-2 {
+                --tilt: 6deg;
+                align-self: start;
+            }
+
+            .img-3 {
+                --tilt: -5deg;
+            }
+
+            .img-4 {
+                --tilt: 8deg;
+                justify-self: start;
+            }
+        }
+
         // Narrower screens, one tier per Bootstrap container width (phones are in
         // _mobile.scss). 1200-1399px keeps the 37px text the other years use and
         // only shrinks the cards and spacing. Below 1200px the whole layout is
@@ -487,7 +592,9 @@
         .timeline-two-images-a,
         .timeline-two-images-b,
         .timeline-three-images-a,
-        .timeline-three-images-b {
+        .timeline-three-images-b,
+        .timeline-four-images-a,
+        .timeline-four-images-b {
             @media (min-width: 1200px) and (max-width: 1399.98px) {
                 .content {
                     gap: 50px;
@@ -509,6 +616,16 @@
                 .content {
                     zoom: .53;
                 }
+            }
+        }
+
+        // Four cards and the text only fit the panel with tighter spacing. This
+        // comes after the tiers above so it also applies at 1200-1399px.
+        .timeline-four-images-a,
+        .timeline-four-images-b {
+            .content {
+                gap: 30px 50px;
+                padding: 10px 20px 0 30px;
             }
         }
     }

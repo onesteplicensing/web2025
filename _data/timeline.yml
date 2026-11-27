@@ -44,17 +44,22 @@
         - /assets/images/timeline/2021-4.svg
 
 - year: 2022
-  template: timeline-template-3
+  template: timeline-three-images-a
   content:
-    - src: /assets/images/timeline/2023.png # Maverick X3
-      text: "BRP launched their brand new<br> Maverick X3 SxS Ride On Toy"
+    text: "BRP launched their brand new<br> Maverick X3 SxS Ride On Toy"
+    images:
+      - /assets/images/timeline/2023.png # Maverick X3, small card on the left
+      - https://i.ibb.co/5W9Rn9ft/timeline2022-canam2.jpg # top right
+      - https://i.ibb.co/SpTg24B/timeline2022-camam1.jpg # big, under the text
 
 - year: 2023
-  template: timeline-template-4
+  template: timeline-two-images-a
   content:
-    - text: |
-        BRP launched their brand new<br>Renegade Ride On Toy
-      src: /assets/images/can-am/renegade/DK-CA002-WH.jpg
+    text: |
+      BRP launched their brand new<br>Renegade Ride On Toy
+    images:
+      - /assets/images/can-am/renegade/DK-CA002-WH.jpg
+      - https://i.ibb.co/1JQBNSkc/timeline2023-cam1.jpg
 
 - year: 2024
   template: timeline-four-images-a

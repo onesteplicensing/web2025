@@ -261,6 +261,256 @@
                 }
             }
         }
+
+        // Two-/three-image templates (see _includes/timeline.html).
+        // The text and each image card (.img-1/2/3, in `images:` order) get their
+        // own grid area, so nothing overlaps whatever the text length. The gaps
+        // leave room for each card's tilt: its --tilt plus the --jitter (up to
+        // ±4deg) that app.js adds on "-b" templates. A "-b" template also gets a
+        // random .layout-2/.layout-3 class on load; without one it shows layout 1,
+        // which is the same as its "-a" template.
+        .timeline-two-images-a,
+        .timeline-two-images-b,
+        .timeline-three-images-a,
+        .timeline-three-images-b {
+            .content {
+                display: grid;
+                align-content: start;
+                align-items: start;
+                gap: 60px;
+                // The right padding keeps a tilted card in the right column inside the panel.
+                padding: 60px 20px 0 60px;
+
+                p:last-child {
+                    margin-bottom: 0;
+                }
+            }
+
+            .timeline-text {
+                grid-area: text;
+            }
+
+            .img-1 {
+                grid-area: img1;
+            }
+
+            .img-2 {
+                grid-area: img2;
+            }
+
+            .img-3 {
+                grid-area: img3;
+            }
+
+            .img-container {
+                transform: rotate(calc(var(--tilt, 0deg) + var(--jitter, 0deg)));
+            }
+        }
+
+        // Layout 1: big card on the left, text on the right, second card under the text.
+        .timeline-two-images-a,
+        .timeline-two-images-b {
+            .content {
+                grid-template-columns: auto 1fr;
+                grid-template-areas:
+                    "img1 text"
+                    "img1 img2";
+            }
+
+            .img-1 img {
+                width: 245px;
+            }
+
+            .img-2 img {
+                width: 220px;
+            }
+
+            .img-1 {
+                --tilt: -15deg;
+                margin-top: 50px;
+            }
+
+            .img-2 {
+                --tilt: 6deg;
+                justify-self: center;
+            }
+        }
+
+        // Layout 2: text top left with a card under it, second card on the right.
+        .timeline-two-images-b.layout-2 {
+            .content {
+                grid-template-columns: 1fr auto;
+                grid-template-areas:
+                    "text img2"
+                    "img1 img2";
+            }
+
+            .img-1 {
+                --tilt: -8deg;
+                margin: 0 0 0 40px;
+            }
+
+            .img-2 {
+                --tilt: 10deg;
+                margin-top: 60px;
+                justify-self: start;
+            }
+        }
+
+        // Layout 3: text across the top, both cards side by side under it.
+        .timeline-two-images-b.layout-3 {
+            .content {
+                grid-template-columns: auto 1fr;
+                grid-template-areas:
+                    "text text"
+                    "img1 img2";
+            }
+
+            .img-1 {
+                --tilt: -12deg;
+                margin: 0;
+            }
+
+            .img-2 {
+                --tilt: 8deg;
+                margin-top: 50px;
+                justify-self: center;
+            }
+        }
+
+        // Layout 1: small card on the left, text in the middle, second card top
+        // right, third (big) card under the text.
+        .timeline-three-images-a,
+        .timeline-three-images-b {
+            .content {
+                grid-template-columns: auto 1fr auto;
+                grid-template-areas:
+                    "img1 text img2"
+                    "img1 img3 .";
+            }
+
+            .timeline-text {
+                align-self: center;
+            }
+
+            .img-1 img {
+                width: 120px;
+            }
+
+            .img-2 img {
+                width: 190px;
+            }
+
+            .img-3 img {
+                width: 260px;
+            }
+
+            .img-1 {
+                --tilt: -15deg;
+                margin-top: 40px;
+            }
+
+            .img-2 {
+                --tilt: 12deg;
+            }
+
+            .img-3 {
+                --tilt: -4deg;
+                justify-self: center;
+            }
+        }
+
+        // Layout 2: text top left, second card top right; small and big cards under them.
+        .timeline-three-images-b.layout-2 {
+            .content {
+                grid-template-columns: 1fr auto;
+                grid-template-areas:
+                    "text img2"
+                    "img1 img3";
+            }
+
+            .timeline-text {
+                align-self: start;
+            }
+
+            .img-1 {
+                --tilt: -12deg;
+                margin: 20px 0 0 0;
+                justify-self: center;
+            }
+
+            .img-2 {
+                --tilt: 10deg;
+                justify-self: center;
+            }
+
+            .img-3 {
+                --tilt: 5deg;
+                justify-self: start;
+            }
+        }
+
+        // Layout 3: small card top left beside the text; big and second cards under them.
+        .timeline-three-images-b.layout-3 {
+            .content {
+                grid-template-columns: auto 1fr;
+                grid-template-areas:
+                    "img1 text"
+                    "img3 img2";
+            }
+
+            .timeline-text {
+                align-self: start;
+            }
+
+            .img-1 {
+                --tilt: -15deg;
+                margin: 20px 0 0 70px;
+            }
+
+            .img-2 {
+                --tilt: 8deg;
+                margin-top: 30px;
+                justify-self: center;
+            }
+
+            .img-3 {
+                --tilt: -6deg;
+                justify-self: start;
+            }
+        }
+
+        // Narrower screens, one tier per Bootstrap container width (phones are in
+        // _mobile.scss). 1200-1399px keeps the 37px text the other years use and
+        // only shrinks the cards and spacing. Below 1200px the whole layout is
+        // shrunk, text included, so it looks like the 1400px+ one scaled down.
+        .timeline-two-images-a,
+        .timeline-two-images-b,
+        .timeline-three-images-a,
+        .timeline-three-images-b {
+            @media (min-width: 1200px) and (max-width: 1399.98px) {
+                .content {
+                    gap: 50px;
+                    padding: 50px 20px 0 40px;
+                }
+
+                .img-container {
+                    zoom: .85;
+                }
+            }
+
+            @media (min-width: 992px) and (max-width: 1199.98px) {
+                .content {
+                    zoom: .72;
+                }
+            }
+
+            @media (min-width: 769px) and (max-width: 991.98px) {
+                .content {
+                    zoom: .53;
+                }
+            }
+        }
     }
 
 }

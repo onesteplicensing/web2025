@@ -21,8 +21,21 @@
             <!-- note that custom styling is in assets/css/_timeline.scss -->
             <div class="tab-content col-md-9 position-relative">
                 {% for item in site.data.timeline %}
+                {% comment %}
+                Two-/three-image templates: how many images each one uses, and how
+                many layouts a "-b" variant picks from at random on each page load
+                (the pick happens in assets/js/app.js).
+                {% endcomment %}
+                {% assign image_count = 0 %}
+                {% assign layout_count = 0 %}
+                {% case item.template %}
+                {% when "timeline-two-images-a" %}{% assign image_count = 2 %}
+                {% when "timeline-two-images-b" %}{% assign image_count = 2 %}{% assign layout_count = 3 %}
+                {% when "timeline-three-images-a" %}{% assign image_count = 3 %}
+                {% when "timeline-three-images-b" %}{% assign image_count = 3 %}{% assign layout_count = 3 %}
+                {% endcase %}
                 <div class="tab-pane fade {% if item.active %}show active{% endif %} {{item.template}}"
-                    id="v-{{item.year}}">
+                    id="v-{{item.year}}" {% if layout_count > 0 %}data-layouts="{{ layout_count }}"{% endif %}>
                     <div class="content">
                         {% if item.template == "timeline-template-1" %}
                         {% assign block = item.content[0] %}
@@ -83,6 +96,28 @@
                         <div class="img-container">
                             <img width="245" src="{{ block.src }}" alt="" />
                         </div>
+
+                        {% elsif image_count > 0 %}
+                        {% comment %}
+                        timeline-two-images-a/-b and timeline-three-images-a/-b:
+                          content:
+                            text: |
+                              ...
+                            images:     # ordered; the template uses the first two or three
+                              - ...     # .img-1
+                              - ...     # .img-2
+                              - ...     # .img-3 (three-image templates only)
+                        Extra images are ignored and missing ones are skipped.
+                        {% endcomment %}
+                        <div class="timeline-text">{{ item.content.text | markdownify }}</div>
+                        {% for img in item.content.images limit: image_count %}
+                        {% if img %}
+                        <div class="img-container img-{{ forloop.index }}">
+                            <img src="{{ img }}" alt="" />
+                        </div>
+                        {% endif %}
+                        {% endfor %}
+
                         {% else %}
                         <!-- Catch all for all other years -->
                         <div class="img-container">

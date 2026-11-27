@@ -193,6 +193,34 @@
                     zoom: .4;
                 }
             }
+
+            // Same grid layouts as desktop, shrunk to fit the 315px box. zoom also
+            // shrinks each card's margins, so only the gaps and the text size need
+            // setting here. The gaps still leave room for the cards' tilt.
+            .timeline-two-images-a,
+            .timeline-two-images-b,
+            .timeline-three-images-a,
+            .timeline-three-images-b {
+                .content {
+                    gap: 16px;
+                    padding: 10px 0 0 0;
+
+                    p {
+                        font-size: 18px;
+                    }
+                }
+
+                .img-container {
+                    zoom: .35;
+                }
+            }
+
+            .timeline-three-images-a,
+            .timeline-three-images-b {
+                .img-container {
+                    zoom: .3;
+                }
+            }
         }
     }
 

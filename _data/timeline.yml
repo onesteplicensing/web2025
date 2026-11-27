@@ -73,11 +73,10 @@
     extraImage: /assets/images/showcase/koenigsegg.png
 
 - year: 2026
-  template: timeline-template-6
+  template: timeline-two-images-b
   content:
-    image: /assets/images/timeline/2025-2.png #https://i.ibb.co/5hcZgdWV/porsche-logo.png
     text: |
-      <br><br><br>
-      Launched NILU27 Collectible Diecast<br><br>
       Became Gunther Werks' exclusive brand licensing agent
-    extraImage: /assets/images/showcase/guntherwerks.png
+    images:
+      - https://i.ibb.co/bgtvNPM2/timeline2026-gw-porsche.jpg
+      - /assets/images/showcase/guntherwerks.png

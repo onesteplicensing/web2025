@@ -10,6 +10,21 @@ if (track.children.length < 10) {
 
 // Tabs timeline
 const _timeline = document.getElementById("timeline");
+
+// "-b" timeline templates (e.g. timeline-two-images-b): on each page load, pick
+// one of the pane's hand-tuned layouts (.layout-N in _timeline.scss) and give
+// each card a small random extra tilt. Every layout keeps the cards clear of the
+// text and of each other; its gaps assume the extra tilt stays within ±4deg.
+const MAX_JITTER_DEG = 4;
+_timeline.querySelectorAll('.tab-pane[data-layouts]').forEach(pane => {
+    const layouts = Number(pane.dataset.layouts);
+    pane.classList.add(`layout-${1 + Math.floor(Math.random() * layouts)}`);
+    pane.querySelectorAll('.img-container').forEach(card => {
+        const jitter = (Math.random() * 2 - 1) * MAX_JITTER_DEG;
+        card.style.setProperty('--jitter', `${jitter.toFixed(1)}deg`);
+    });
+});
+
 const tabsContainer = _timeline.querySelector('.nav-pills');
 const tabs = tabsContainer.querySelectorAll('button');
 let currentTabIndex = 0;
